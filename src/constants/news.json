@@ -1,0 +1,308 @@
+Object {
+    "data": Array [
+      Object {
+        "@context": "http://schema.org",
+        "@type": "MusicEvent",
+        "description": "Terri Clark and Reba McEntire at Hollywood Bowl at 2023-04-01T18:30:00-0700",
+        "endDate": "2023-04-01",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "image": "https://images.sk-static.com/images/media/profile_images/artists/106069/huge_avatar",
+        "location": Object {
+          "@type": "Place",
+          "address": Object {
+            "@type": "PostalAddress",
+            "addressCountry": "US",
+            "addressLocality": "Hollywood",
+            "addressRegion": "CA",
+            "postalCode": "90068",
+            "streetAddress": "2301 N. Highland Ave.",
+          },
+          "geo": Object {
+            "@type": "GeoCoordinates",
+            "latitude": 34.11137,
+            "longitude": -118.33624,
+          },
+          "name": "Hollywood Bowl",
+        },
+        "name": "Terri Clark",
+        "performer": Array [
+          Object {
+            "@type": "MusicGroup",
+            "name": "Terri Clark",
+          },
+          Object {
+            "@type": "MusicGroup",
+            "name": "Reba McEntire",
+          },
+        ],
+        "startDate": "2023-04-01T18:30:00-0700",
+      },
+      Object {
+        "@context": "http://schema.org",
+        "@type": "MusicEvent",
+        "description": "DRAMAGIRLS at Hollywood Bowl at 2023-04-18T18:00:00-0700",
+        "endDate": "2023-04-18",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "image": "https://images.sk-static.com/images/media/profile_images/artists/10252916/huge_avatar",
+        "location": Object {
+          "@type": "Place",
+          "address": Object {
+            "@type": "PostalAddress",
+            "addressCountry": "US",
+            "addressLocality": "Hollywood",
+            "addressRegion": "CA",
+            "postalCode": "90068",
+            "streetAddress": "2301 N. Highland Ave.",
+          },
+          "geo": Object {
+            "@type": "GeoCoordinates",
+            "latitude": 34.11137,
+            "longitude": -118.33624,
+          },
+          "name": "Hollywood Bowl",
+        },
+        "name": "DRAMAGIRLS",
+        "performer": Array [
+          Object {
+            "@type": "MusicGroup",
+            "name": "DRAMAGIRLS",
+          },
+        ],
+        "startDate": "2023-04-18T18:00:00-0700",
+      },
+      Object {
+        "@context": "http://schema.org",
+        "@type": "MusicEvent",
+        "description": "Phish at Hollywood Bowl at 2023-04-21T19:00:00-0700",
+        "endDate": "2023-04-21",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "image": "https://images.sk-static.com/images/media/profile_images/artists/46745/huge_avatar",
+        "location": Object {
+          "@type": "Place",
+          "address": Object {
+            "@type": "PostalAddress",
+            "addressCountry": "US",
+            "addressLocality": "Hollywood",
+            "addressRegion": "CA",
+            "postalCode": "90068",
+            "streetAddress": "2301 N. Highland Ave.",
+          },
+          "geo": Object {
+            "@type": "GeoCoordinates",
+            "latitude": 34.11137,
+            "longitude": -118.33624,
+          },
+          "name": "Hollywood Bowl",
+        },
+        "name": "Phish",
+        "performer": Array [
+          Object {
+            "@type": "MusicGroup",
+            "name": "Phish",
+          },
+        ],
+        "startDate": "2023-04-21T19:00:00-0700",
+      },
+      Object {
+        "@context": "http://schema.org",
+        "@type": "MusicEvent",
+        "description": "Phish at Hollywood Bowl at 2023-04-22T19:00:00-0700",
+        "endDate": "2023-04-22",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "image": "https://images.sk-static.com/images/media/profile_images/artists/46745/huge_avatar",
+        "location": Object {
+          "@type": "Place",
+          "address": Object {
+            "@type": "PostalAddress",
+            "addressCountry": "US",
+            "addressLocality": "Hollywood",
+            "addressRegion": "CA",
+            "postalCode": "90068",
+            "streetAddress": "2301 N. Highland Ave.",
+          },
+          "geo": Object {
+            "@type": "GeoCoordinates",
+            "latitude": 34.11137,
+            "longitude": -118.33624,
+          },
+          "name": "Hollywood Bowl",
+        },
+        "name": "Phish",
+        "performer": Array [
+          Object {
+            "@type": "MusicGroup",
+            "name": "Phish",
+          },
+        ],
+        "startDate": "2023-04-22T19:00:00-0700",
+      },
+      Object {
+        "@context": "http://schema.org",
+        "@type": "MusicEvent",
+        "description": "Phish at Hollywood Bowl at 2023-04-23T18:30:00-0700",
+        "endDate": "2023-04-23",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "image": "https://images.sk-static.com/images/media/profile_images/artists/46745/huge_avatar",
+        "location": Object {
+          "@type": "Place",
+          "address": Object {
+            "@type": "PostalAddress",
+            "addressCountry": "US",
+            "addressLocality": "Hollywood",
+            "addressRegion": "CA",
+            "postalCode": "90068",
+            "streetAddress": "2301 N. Highland Ave.",
+          },
+          "geo": Object {
+            "@type": "GeoCoordinates",
+            "latitude": 34.11137,
+            "longitude": -118.33624,
+          },
+          "name": "Hollywood Bowl",
+        },
+        "name": "Phish",
+        "performer": Array [
+          Object {
+            "@type": "MusicGroup",
+            "name": "Phish",
+          },
+        ],
+        "startDate": "2023-04-23T18:30:00-0700",
+      },
+      Object {
+        "@context": "http://schema.org",
+        "@type": "MusicEvent",
+        "description": "Bobby Weir at Hollywood Bowl at 2023-04-29T09:00:00-0700",
+        "endDate": "2023-04-29",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "image": "https://images.sk-static.com/images/media/profile_images/artists/10161050/huge_avatar",
+        "location": Object {
+          "@type": "Place",
+          "address": Object {
+            "@type": "PostalAddress",
+            "addressCountry": "US",
+            "addressLocality": "Hollywood",
+            "addressRegion": "CA",
+            "postalCode": "90068",
+            "streetAddress": "2301 N. Highland Ave.",
+          },
+          "geo": Object {
+            "@type": "GeoCoordinates",
+            "latitude": 34.11137,
+            "longitude": -118.33624,
+          },
+          "name": "Hollywood Bowl",
+        },
+        "name": "Bobby Weir",
+        "performer": Array [
+          Object {
+            "@type": "MusicGroup",
+            "name": "Bobby Weir",
+          },
+        ],
+        "startDate": "2023-04-29T09:00:00-0700",
+      },
+      Object {
+        "@context": "http://schema.org",
+        "@type": "MusicEvent",
+        "description": "Long Story Short: Willie Nelson 90 2023 at Hollywood Bowl at 2023-04-29",
+        "endDate": "2023-04-30",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "image": "https://images.sk-static.com/images/media/profile_images/events/40865266/huge_avatar",
+        "location": Object {
+          "@type": "Place",
+          "address": Object {
+            "@type": "PostalAddress",
+            "addressCountry": "US",
+            "addressLocality": "Hollywood",
+            "addressRegion": "CA",
+            "postalCode": "90068",
+            "streetAddress": "2301 N. Highland Ave.",
+          },
+          "geo": Object {
+            "@type": "GeoCoordinates",
+            "latitude": 34.11137,
+            "longitude": -118.33624,
+          },
+          "name": "Hollywood Bowl",
+        },
+        "name": "Long Story Short: Willie Nelson 90 2023",
+        "performer": Array [
+          Object {
+            "@type": "MusicGroup",
+            "name": "Beck",
+          },
+          Object {
+            "@type": "MusicGroup",
+            "name": "Norah Jones",
+          },
+          Object {
+            "@type": "MusicGroup",
+            "name": "Kacey Musgraves",
+          },
+          Object {
+            "@type": "MusicGroup",
+            "name": "The Chicks (US)",
+          },
+          Object {
+            "@type": "MusicGroup",
+            "name": "Margo Price",
+          },
+          Object {
+            "@type": "MusicGroup",
+            "name": "Charley Crockett",
+          },
+          Object {
+            "@type": "MusicGroup",
+            "name": "Allison Russell",
+          },
+        ],
+        "startDate": "2023-04-29",
+      },
+      Object {
+        "@context": "http://schema.org",
+        "@type": "MusicEvent",
+        "description": "Long Story Short: Willie Nelson 90, A Star - Studded Concert Celebrating Willie’s 90th Birthday 2023 at Hollywood Bowl at 2023-04-29",
+        "endDate": "2023-04-30",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "image": "https://images.sk-static.com/images/media/profile_images/events/40865506/huge_avatar",
+        "location": Object {
+          "@type": "Place",
+          "address": Object {
+            "@type": "PostalAddress",
+            "addressCountry": "US",
+            "addressLocality": "Hollywood",
+            "addressRegion": "CA",
+            "postalCode": "90068",
+            "streetAddress": "2301 N. Highland Ave.",
+          },
+          "geo": Object {
+            "@type": "GeoCoordinates",
+            "latitude": 34.11137,
+            "longitude": -118.33624,
+          },
+          "name": "Hollywood Bowl",
+        },
+        "name": "Long Story Short: Willie Nelson 90, A Star - Studded Concert Celebrating Willie’s 90th Birthday 2023",
+        "performer": Array [
+          Object {
+            "@type": "MusicGroup",
+            "name": "Tyler Childers",
+          },
+        ],
+        "startDate": "2023-04-29",
+      },
+      Object {
+        "@context": "http://schema.org",
+        "@type": "MusicEvent",
+        "description": "Willie Nelson's 90th Birthday Celebration 2023 at Hollywood Bowl at 2023-04-29",
+        "endDate": "2023-04-30",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "image": "https://images.sk-static.com/images/media/profile_images/events/40921253/huge_avatar",
+        "location": Object {
+          "@type": "Place",
+          "address": Object {
+            "@type": "PostalAddress",
+            "addressCountry": "US",
+            "addressLocality": "Hollywood",
+            "addressRegion...(truncated to the first 10000 characters)
