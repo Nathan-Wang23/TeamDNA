@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(40, 39, 38, 0.8)'
   },
   container: {
-    paddingTop: 10,
+    paddingTop: height*0.01,
     alignContent: "center",
     alignItems: "center",
     justifyContent:'space-evenly',
@@ -51,19 +51,19 @@ const styles = StyleSheet.create({
   },
   thumbnail: {
 
-    marginLeft:12,
-    marginRight:12,
-    marginTop: 5,
-    marginBottom:5,
-    height:100,
-    width:100,
-    borderRadius:50,
+    marginLeft:width*0.016,
+    marginRight:width*0.016,
+    marginTop: height*0.003,
+    marginBottom:height*0.003,
+    height:height*0.07,
+    width:width*.13,
+    borderRadius:width*0.067,
     borderColor: 'white',
     borderWidth:0.5
   },
   ptitle: {
     position: 'absolute',
-    marginLeft: 150,
+    marginLeft: width*.2,
     flexDirection: 'column',
     flex:1
 
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
 
   },
   modal: {
-    padding: 10,
+    padding: width*0.013,
     justifyContent: 'space-evenly',
     alignItems: 'center',
     color: 'rgba(130, 123, 117, 0.8)',
@@ -85,17 +85,17 @@ const styles = StyleSheet.create({
    art: {
     backgroundColor: 'rgba(130, 123, 117, 0.8)',
     shadowColor: 'rgba(106, 90, 205,1)',
-    padding: 20,
-    borderRadius: 10,
+    padding: width*0.026,
+    borderRadius: width*0.013,
 
    },
    thumbnail_modal: {
     width: width * 0.5,
     height: width * 0.5,
-    marginLeft:12,
-    marginRight:12,
-    marginTop: 15,
-    marginBottom: 15,
+    marginLeft:width*0.016,
+    marginRight:width*0.016,
+    marginTop: height*0.011,
+    marginBottom: height*0.011,
     borderRadius: width * 0.5 * 0.5,
    },
    segment: {
@@ -108,10 +108,10 @@ const styles = StyleSheet.create({
    },
    blurb: {
     flex:1,
-    marginTop: 37,
+    marginTop: 0.028*height,
     color: 'white',
     fontFamily: 'Verdana',
-    padding:5
+    padding:width*0.01
    }
 });
 

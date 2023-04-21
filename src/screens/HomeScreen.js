@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(40, 39, 38, 0.8)'
   },
   container: {
-    paddingTop: 10,
+    paddingTop: 0.01*height,
     flexDirection: 'column',
     alignContent: "center",
     alignItems: "center",
@@ -53,13 +53,13 @@ const styles = StyleSheet.create({
   thumbnail: {
     width: width * 0.42,
     height: width * 0.42,
-    marginLeft:12,
-    marginRight:12,
-    marginTop: 15
+    marginLeft:width*0.016,
+    marginRight:width*0.016,
+    marginTop: height*0.011
   },
   ptitle: {
     position: 'absolute',
-    marginLeft: 150
+    marginLeft: width*0.2
 
   },
   button: {
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
 
   },
   modal: {
-    padding: 10,
+    padding: width*0.013,
     justifyContent: 'space-evenly',
     alignItems: 'center',
     color: 'rgba(130, 123, 117, 0.8)'
@@ -79,20 +79,20 @@ const styles = StyleSheet.create({
    art: {
     backgroundColor: 'rgba(130, 123, 117, 0.8)',
     shadowColor: 'rgba(106, 90, 205,1)',
-    padding: 20,
-    borderRadius: 10
+    padding: width*0.026,
+    borderRadius: width*0.013
 
    },
    thumbnail_modal: {
     width: width * 0.5,
     height: width * 0.5,
-    marginLeft:12,
-    marginRight:12,
-    marginTop: 15,
-    marginBottom: 15
+    marginLeft:width*0.016,
+    marginRight:width*0.016,
+    marginTop: height*0.011,
+    marginBottom: height*0.011
    },
    albums: {
-    left: 5,
+    left: width*0.01,
     color: 'white',
     fontFamily: 'Verdana',
 
@@ -288,7 +288,7 @@ const HomeScreen = ({ navigation }) => {
 
 
       </View>
-      <View style={{color:'white', marginLeft:140}}>
+      <View style={{color:'white', marginLeft:width*0.2}}>
         <Ripple onPress={() => getPlaylists()}>
           <Text style={{color:'white'}}>Gather Playlists</Text>
         </Ripple>

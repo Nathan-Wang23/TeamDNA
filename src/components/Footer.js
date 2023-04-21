@@ -16,36 +16,36 @@ const styles = StyleSheet.create({
     nav: {
         color: 'white',
         flexDirection: 'row',
-        paddingLeft: 15,
-        paddingRight: 15,
-        marginBottom: 10,
-        left: 5
+        paddingLeft: width*0.02,
+        paddingRight: width*0.02,
+        marginBottom: height*0.01,
+        left: width*0.01
     },
     current: {
         color: '#E37042',
         flexDirection: 'row',
         fontSize: 50,
-        paddingLeft: 15,
-        paddingRight:15,
-        marginBottom: 10,
-        left: 5,
+        paddingLeft: width*0.02,
+        paddingRight:width*0.02,
+        marginBottom: 0.01*height,
+        left: width*0.01,
         zoom: 1.4
     },
     navName: {
         color: 'white',
-        paddingLeft: 7,
-        paddingRight:7,
-        marginBottom: 15,
-        marginTop: -5,
-        left: -10
+        paddingLeft: width*0.01,
+        paddingRight:width*0.01,
+        marginBottom: height*0.011,
+        marginTop: -0.004*height,
+        left: -width*0.013
     },
     currentName: {
         color: '#E37042',
-        paddingLeft: 7,
-        paddingRight:7,
-        marginBottom: 15,
-        marginTop: -5,
-        left: -10
+        paddingLeft: width*0.01,
+        paddingRight:width*0.01,
+        marginBottom: height*0.011,
+        marginTop: -0.004*height,
+        left: -.013*width
     }
 })
 

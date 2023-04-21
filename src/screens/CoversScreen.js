@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(40, 39, 38, 0.8)'
   },
   container: {
-    paddingTop: 10,
+    paddingTop: height*0.01,
     flexDirection: 'column',
     alignContent: "center",
     alignItems: "center",
@@ -33,13 +33,13 @@ const styles = StyleSheet.create({
   thumbnail: {
     width: width * 0.42,
     height: width * 0.42,
-    marginLeft:12,
-    marginRight:12,
-    marginTop: 15
+    marginLeft:width*0.016,
+    marginRight:width*0.016,
+    marginTop: height*.011
   },
   ptitle: {
     position: 'absolute',
-    marginLeft: 150
+    marginLeft: width*.2
 
   },
   button: {
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
 
   },
   modal: {
-    padding: 10,
+    padding: width*0.013,
     justifyContent: 'space-evenly',
     alignItems: 'center',
     color: 'rgba(130, 123, 117, 0.8)'
@@ -59,20 +59,20 @@ const styles = StyleSheet.create({
    art: {
     backgroundColor: 'rgba(130, 123, 117, 0.8)',
     shadowColor: 'rgba(106, 90, 205,1)',
-    padding: 20,
-    borderRadius: 10
+    padding: width*0.026,
+    borderRadius: width*0.013
 
    },
    thumbnail_modal: {
     width: width * 0.5,
     height: width * 0.5,
-    marginLeft:12,
-    marginRight:12,
-    marginTop: 15,
-    marginBottom: 15
+    marginLeft:width*0.016,
+    marginRight:width*0.016,
+    marginTop: height*0.011,
+    marginBottom: height*0.011
    },
    titles: {
-    padding: 10,
+    padding: width*0.013,
     color:'white',
     fontFamily: 'Verdana'
    }
@@ -143,20 +143,20 @@ const CoversScreen = ({ navigation }) => {
         <ScrollView>
           <Text style={styles.titles}>Collie Buddz - Take It Easy (Official Music Video)</Text>
           <YoutubePlayer
-            height={250}
+            height={height*0.19}
             width={width}
             play={false}
             videoId={'Y3wl6Yjr6Ns'}
           />
           <Text style={styles.titles}>One Man Band - Phish Covers with Live Looping Improvisation</Text>
           <YoutubePlayer
-            height={250}
+            height={height*0.19}
             play={false}
             videoId={'UAFUEkL2_2M'}
           />
           <Text style={styles.titles}>TOP 30 songs for ACOUSTIC guitar!</Text>
           <YoutubePlayer
-            height={250}
+            height={height*0.19}
             play={false}
             videoId={'T-U3c1nU3eM'}
           />
