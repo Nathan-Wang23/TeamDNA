@@ -10,6 +10,8 @@ import Footer from '../components/Footer';
 import Button from '../components/Button';
 
 const { width, height } = Dimensions.get('window')
+const config = require('../constants/config')
+
 
 const styles = StyleSheet.create({
   backdrop: {
@@ -93,6 +95,45 @@ const CoversScreen = ({ navigation }) => {
   const togglePlaying = () => {
     setPlaying((prev) => !prev);
   };
+
+  let pl = [
+    {
+      id: '122',
+      name: 'temp'
+    }
+  ];
+
+  const getArtists = async () => {
+    try{
+      const data = await axios.get('https://api.spotify.com/v1/me/top/artists', {
+        headers: {
+          'Authorization': 'Bearer ' + config.token
+        }
+    })
+
+    let p = data.data.items;
+    let pp = [];
+    for (let i = 0; i < p.length; i++) {
+      let id_uri = p[i].uri;
+      let name = p[i].name;
+      let ext_url = p[i].external_urls;
+      let images = p[i].images;
+      let entry = {
+        id: id_uri,
+        name: name,
+        ex_urls: ext_url,
+        images: images
+      };
+      pp.push(entry);
+    }
+    pl = pp;
+    //console.log(playlists);
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+
 
   return (
     <View style={[t.flex1]}>

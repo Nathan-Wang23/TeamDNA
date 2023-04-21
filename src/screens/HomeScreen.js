@@ -216,7 +216,7 @@ const HomeScreen = ({ navigation }) => {
   let pl = [
     {
       id: '122',
-      name: 'balls'
+      name: 'temp'
     }
   ];
   const getPlaylists = async () => {
