@@ -168,6 +168,8 @@ const Item = ({ title, description, image }) => {
 const HomeScreen = ({ navigation }) => {
   const [playlists, setPlaylists] = useState(null);
   const [playlistsData, setPlaylistsData] = useState(null);
+  const [artists, setArtists] = useState(null);
+
 
   //useEffect(() => {
   //  const fetchData = async () => {
@@ -213,12 +215,7 @@ const HomeScreen = ({ navigation }) => {
 
   //}, [playlistsData]);
 
-  let pl = [
-    {
-      id: '122',
-      name: 'temp'
-    }
-  ];
+
   const getPlaylists = async () => {
     try{
       const data = await axios.get('https://api.spotify.com/v1/me/playlists', {
@@ -242,8 +239,41 @@ const HomeScreen = ({ navigation }) => {
       };
       pp.push(entry);
     }
+
     setPlaylists(pp);
-    pl = pp;
+    //console.log(pp)
+
+    //console.log(playlists);
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  const getArtists = async () => {
+    try{
+      const data = await axios.get('https://api.spotify.com/v1/me/top/artists', {
+        headers: {
+          'Authorization': 'Bearer ' + config.token
+        }
+    })
+
+    let p = data.data.items;
+    let pp = [];
+    for (let i = 0; i < p.length; i++) {
+      let id_uri = p[i].uri;
+      let name = p[i].name;
+      let ext_url = p[i].external_urls;
+      let images = p[i].images;
+      let entry = {
+        id: id_uri,
+        name: name,
+        link: ext_url,
+        images: images
+      };
+      pp.push(entry);
+    }
+    setArtists(pp);
+    return pp
     //console.log(playlists);
     } catch (err) {
       console.error(err);

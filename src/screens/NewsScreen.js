@@ -21,6 +21,8 @@ import Ripple from 'react-native-material-ripple';
 import { GRADIENT_COLORS } from '../constants/colors';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import axios, * as others from 'axios';
+const config = require('../constants/config')
 
 const { width, height } = Dimensions.get('window')
 
@@ -251,6 +253,65 @@ const NewsScreen = ({ navigation }) => {
     console.log(data)
   }
 
+  const [artists, setArtists] = useState(null);
+
+
+   const getArtists = async () => {
+    try{
+      const data = await axios.get('https://api.spotify.com/v1/me/top/artists', {
+        headers: {
+          'Authorization': 'Bearer ' + config.token
+        }
+    })
+
+    let p = data.data.items;
+    let pp = [];
+    let artists = []
+    for (let i = 0; i < p.length; i++) {
+      let id_uri = p[i].uri;
+      let name = p[i].name;
+      let ext_url = p[i].external_urls;
+      let images = p[i].images;
+      let entry = {
+        id: id_uri,
+        name: name,
+        link: ext_url,
+        images: images
+      };
+      pp.push(entry);
+      artists.push(name);
+    }
+    setArtists(pp);
+    return artists;
+    //console.log(playlists);
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  const gatherNews = async () => {
+    try {
+      const artists = await getArtists();
+      const options = {
+        method: 'GET',
+        url: 'https://concerts-artists-events-tracker.p.rapidapi.com/artist',
+        params: {name: artists[0], page: '1'},
+        headers: {
+          'X-RapidAPI-Key': 'd2cf29e1d9mshccb147eb03fb868p1fb9cbjsn591aaaa13fb3',
+          'X-RapidAPI-Host': 'concerts-artists-events-tracker.p.rapidapi.com'
+        }
+      };
+
+      axios.request(options).then(function (response) {
+        console.log(response.data.data);
+      }).catch(function (error) {
+        console.error(error);
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
   return (
     <View style={{flex:1}}>
       <Header navigation={navigation} title="Music News" />
@@ -265,6 +326,12 @@ const NewsScreen = ({ navigation }) => {
             <Text>Refresh</Text>
           </Ripple>
         </View>*/}
+
+        <View style={{color:'white', marginLeft:140}}>
+          <Ripple onPress={() => gatherNews()}>
+            <Text style={{color:'white'}}>Gather News</Text>
+          </Ripple>
+        </View>
           <FlatList
             numColumns={1}
             data={data}
