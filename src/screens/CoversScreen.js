@@ -125,13 +125,13 @@ const CoversScreen = ({ navigation }) => {
 
   const getVideos = async (artists) => {
     try {
-      let api_key = 'AIzaSyCjt34vKyUx8sRDZrTyn5po-BEMUn6Ax7A'
+      let api_key = 'AIzaSyApl3CNAOOvwn28_k2TX-4reKSeTGbnAE4'
 
       let vids = [];
-      for (let i = 0; i < artists.length; i++) {
-        search_words = "News about " + artists[i];
+      for (let i = 0; i < artists.length / 2; i++) {
+        search_words = "Videos about " + artists[i];
 
-        const url = `https://www.googleapis.com/youtube/v3/search?key=AIzaSyCjt34vKyUx8sRDZrTyn5po-BEMUn6Ax7A&type=video&part=snippet&q=${search_words}`;
+        const url = `https://www.googleapis.com/youtube/v3/search?maxResults=1&key=${api_key}&type=video&part=snippet&q=${search_words}`;
 
         const response = await fetch(url);
         const data = await response.json();
@@ -139,7 +139,7 @@ const CoversScreen = ({ navigation }) => {
         if (data && data.items && data.items[0] && data.items[0].id && data.items[0].id.videoId) {
           let entry = {
             id: data.items[0].id.videoId,
-            title: data.items[0].title
+            title: data.items[0].snippet.title
           };
           vids.push(entry);
         } else {
@@ -147,7 +147,7 @@ const CoversScreen = ({ navigation }) => {
         }
       }
 
-
+      console.log(vids)
       return vids;
 
     } catch (er){
@@ -160,9 +160,9 @@ const CoversScreen = ({ navigation }) => {
     <View style={[t.flex1]}>
       <Header navigation={navigation} title="Amateur Covers"/>
       <View style={styles.container}>
-        <View style={{color:'white', marginLeft:140}}>
+        <View style={{color:'white', marginLeft:0}}>
           <Ripple onPress={() => getArtists()}>
-            <Text style={{color:'white'}}>Gather Artists</Text>
+            <Text style={{color:'white'}}>Load Videos</Text>
           </Ripple>
         </View>
         {/*<ScrollView>
