@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput } from 'react-native';
+import { View, Text, TextInput, Dimensions } from 'react-native';
 import { t } from 'react-native-tailwindcss';
 import { LinearGradient } from 'expo-linear-gradient';
 import { AntDesign } from '@expo/vector-icons';
@@ -9,7 +9,11 @@ import Button from '../components/Button';
 import routes from '../constants/routes';
 import { useNavigation } from '@react-navigation/native';
 
+
 import { GRADIENT_COLORS } from '../constants/colors';
+
+const { width, height } = Dimensions.get('window')
+
 
 const LoginScreen = ({navigation}) => {
   const [showLogin, setShowLogin] = useState(true);
@@ -46,7 +50,7 @@ const LoginScreen = ({navigation}) => {
         <AntDesign
           name="filetext1"
 
-          size={124}
+          size={height/4}
           color="rgba(57,53,53, 0.3)"
         />
         <View >
@@ -55,13 +59,12 @@ const LoginScreen = ({navigation}) => {
               t.textWhite,
               t.text2xl,
               t.fontBold,
-              t.mR3,
-              { lineHeight: 26 }
+              { alignSelf:'center', lineHeight: 50 }
             ]}
           >
             {showLogin ? 'LOGIN' : 'SIGNUP'}
           </Text>
-          <AntDesign name="addusergroup" size={24} color="white" />
+          <AntDesign style={{alignSelf:'center'}} name="addusergroup" size={height/40} color="white" />
         </View>
 
         <View style={[t.bgGray100, t.roundedLg, t.p8, t.shadow2xl]}>
@@ -129,7 +132,7 @@ const LoginScreen = ({navigation}) => {
         <AntDesign
           name="filetext1"
 
-          size={250}
+          size={height}
           color="rgba(57,53,53, 0.3)"
         />
         </LinearGradient>

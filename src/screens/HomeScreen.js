@@ -45,8 +45,8 @@ const styles = StyleSheet.create({
     justifyContent:'space-evenly',
     backgroundColor: '#222222',
     position: 'absolute',
-    top:height*0.15,
-    height:height*0.76,
+    top:height*0.155,
+    height:height*0.8,
     width: width
 
   },
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     height: width * 0.42,
     marginLeft:12,
     marginRight:12,
-    marginTop: 15
+    marginTop: height*0.05
   },
   ptitle: {
     position: 'absolute',
@@ -64,9 +64,9 @@ const styles = StyleSheet.create({
   },
   button: {
     alignContent: 'center',
-    fontSize: 15,
-    marginLeft: '90%',
-    color: 'rgba(130, 123, 117, 0.8)'
+    marginLeft: width*0.8,
+    marginTop: height*0.05,
+    color: 'rgba(130, 123, 117, 0.8)',
 
   },
   modal: {
@@ -112,7 +112,6 @@ const Item = ({ title, description, image }) => {
         //LayoutAnimation.configureNext(LayoutAnimation.Presets.spring);
         //setFullView((prev) => !prev);
         setModalVisible(!modalVisible)
-        console.log({title})
       }}
       activeOpacity={0.8}
     >
@@ -157,10 +156,6 @@ const Item = ({ title, description, image }) => {
         </Text>
 
       </View>
-      <Text
-        numberOfLines={fullView ? 0 : 2} style={styles.albums}>
-        {description}
-      </Text>
     </TouchableOpacity>
   );
 };
@@ -169,6 +164,7 @@ const HomeScreen = ({ navigation }) => {
   const [playlists, setPlaylists] = useState(null);
   const [playlistsData, setPlaylistsData] = useState(null);
   const [artists, setArtists] = useState(null);
+  const [modalVisible, setModalVisible] = useState(false);
 
 
   //useEffect(() => {
@@ -241,7 +237,6 @@ const HomeScreen = ({ navigation }) => {
     }
 
     setPlaylists(pp);
-    //console.log(pp)
 
     //console.log(playlists);
     } catch (err) {
@@ -299,17 +294,43 @@ const HomeScreen = ({ navigation }) => {
           numColumns={2}
           data={playlists}
           renderItem={({ item }) => (
-
-            //<Item description={item.title} image={item.image}/>
-            //<Text>{item.name}</Text>
             <View>
-              <Image
+            <TouchableOpacity
+              style={{flex:1}}
+              onPress={(e) => {
+                setModalVisible(!modalVisible)
+              }}
+              activeOpacity={0.8}
+            >
+              <View>
+              <Modal
+                style={{flex:1}}
+                animationType="slide"
+                visible={modalVisible}
+                onRequestClose={() => {
+                  Alert.alert('Modal has been closed.');
+                setModalVisible(!modalVisible);
+              }}>
+                <Pressable
+                  style={[styles.button, styles.buttonClose]}
+                  onPress={() => setModalVisible(!modalVisible)}>
+                  <Text style={{fontSize:width*0.1}}>✖</Text>
+                </Pressable>
+                <Text style={{borderRadius:width*0.02, borderWidth:width*0.005, padding:width*0.04, borderColor:'black', alignSelf:'center'}}>Generate Art!</Text>
+              </Modal>
+            </View>
+              <View>
+                <Image
                 style={styles.thumbnail}
                 source={{uri: item.images[0].url}} />
               <Text style={styles.albums}>
-              {item.name}
+                {item.name}
               </Text>
             </View>
+          </TouchableOpacity>
+
+          </View>
+
 
 
           )}
@@ -318,9 +339,9 @@ const HomeScreen = ({ navigation }) => {
 
 
       </View>
-      <View style={{color:'white', marginLeft:140}}>
+      <View style={{color:'white', alignSelf:'center', bottom:height*0.075, borderRadius:width*0.05, borderColor: 'white', borderWidth:0.5, padding:width*0.02, backgroundColor:'gray'}}>
         <Ripple onPress={() => getPlaylists()}>
-          <Text style={{color:'white'}}>Gather Playlists</Text>
+          <Text style={{color:'black'}}>Gather Playlists</Text>
         </Ripple>
       </View>
       <Footer navigation={navigation} />

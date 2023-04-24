@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Dimensions } from 'react-native';
 import { t, color } from 'react-native-tailwindcss';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigationState } from '@react-navigation/native';
@@ -13,6 +13,9 @@ import * as AuthSession from 'expo-auth-session';
 import axios, * as others from 'axios';
 import {encode, decode} from 'base-64';
 import base64 from 'react-native-base64';
+
+const { width, height } = Dimensions.get('window')
+
 
 
 import { Buffer } from 'buffer';
@@ -132,7 +135,7 @@ const Header = ({ navigation, title, onDeletePost }) => {
 
 
     return (
-    <View style={[t.shadowMd, { height: 100 }]}>
+    <View style={[t.shadowMd, { height: 200 }]}>
       <LinearGradient
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 0 }}
@@ -145,20 +148,20 @@ const Header = ({ navigation, title, onDeletePost }) => {
           { alignItems: 'center' }
         ]}
       >
-        <View style={[t.flexRow, { alignItems: 'center' }]}>
+        <View style={[t.flexRow, {height: height/4, bottom:height*0.02, alignItems: 'center' }]}>
           <Text style={[t.textWhite, t.fontBold, t.textXl, t.mL3]}>
             {title}
           </Text>
         </View>
         {!loggedIn && currentScreen === routes.Home && <View style={[t.flexRow]}>
-          <Ripple onPress={() => spotifyLogin()} rippleColor="white" style={[t.p4, t.mR2]}>
-            <Text style={[t.textWhite, t.textS, t.mL3]}>Login Spotify</Text>
+          <Ripple onPress={() => spotifyLogin()} rippleColor="white" style={[t.p4, t.mR2, {bottom: height*0.02}]}>
+            <Text style={[t.textWhite, t.textS, t.mL3, {borderRadius:width*0.04, borderColor: 'green', borderWidth:0.5, padding:width*0.02}]}>Login Spotify</Text>
           </Ripple>
         </View>}
 
         {loggedIn && <View style={[t.flexRow]}>
           <Ripple rippleColor="white" style={[t.p4, t.mR2]}>
-            <Text style={[t.textWhite, t.textS, t.mL3]}>Logged In</Text>
+            <Text style={[t.textWhite, t.textS, t.mL3, {bottom: height*0.02}]}>Logged In</Text>
           </Ripple>
         </View>}
 

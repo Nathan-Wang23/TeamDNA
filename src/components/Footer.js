@@ -11,6 +11,8 @@ import routes from '../constants/routes';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faRecordVinyl, faNewspaper, faBrush, faMusic} from "@fortawesome/free-solid-svg-icons";
 
+const { width, height } = Dimensions.get('window')
+
 
 const styles = StyleSheet.create({
     nav: {
@@ -18,8 +20,11 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         paddingLeft: 15,
         paddingRight: 15,
-        marginBottom: 10,
-        left: 5
+        marginBottom: height*0.085,
+        paddingBottom:0,
+        width: width/4,
+        left: 0,
+
     },
     current: {
         color: '#E37042',
@@ -27,29 +32,30 @@ const styles = StyleSheet.create({
         fontSize: 50,
         paddingLeft: 15,
         paddingRight:15,
-        marginBottom: 10,
-        left: 5,
+        width:width/4,
+        marginBottom: height*0.085,
         zoom: 1.4
     },
     navName: {
         color: 'white',
         paddingLeft: 7,
         paddingRight:7,
-        marginBottom: 15,
-        marginTop: -5,
-        left: -10
+        position: 'absolute',
+        top: height*0.025,
+        width:width,
+        left: -width*0.04
     },
     currentName: {
         color: '#E37042',
         paddingLeft: 7,
         paddingRight:7,
-        marginBottom: 15,
-        marginTop: -5,
-        left: -10
+        position:'absolute',
+        top:height*0.025,
+        width:width,
+        left: -width*0.04
     }
 })
 
-const { width, height } = Dimensions.get('window')
 
 let scren = "Home"
 const Footer = ({ navigation, title }) => {
@@ -58,7 +64,7 @@ const Footer = ({ navigation, title }) => {
   );
 
   return (
-    <View style={[t.shadowMd, { height: 60, position: 'absolute', top: height - 60, left:0, right:0, bottom:0 }]}>
+    <View style={[t.shadowMd, { height: height*0.15, position: 'absolute', top: height*0.92, left:0, right:0, bottom:0 }]}>
       <LinearGradient
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 0 }}

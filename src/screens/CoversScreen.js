@@ -32,8 +32,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width:width,
     top:height*0.15,
-    height: height*0.76
-
+    height:height*0.8
   },
   thumbnail: {
     width: width * 0.42,
@@ -115,7 +114,7 @@ const CoversScreen = ({ navigation }) => {
       pp.push(name);
     }
     setArtists(pp);
-    dat = await getVideos(pp);
+    let dat = await getVideos(pp);
     setVideos(dat);
     //console.log(playlists);
     } catch (err) {
@@ -129,7 +128,7 @@ const CoversScreen = ({ navigation }) => {
 
       let vids = [];
       for (let i = 0; i < artists.length / 2; i++) {
-        search_words = "Videos about " + artists[i];
+        let search_words = "Videos about " + artists[i];
 
         const url = `https://www.googleapis.com/youtube/v3/search?maxResults=1&key=${api_key}&type=video&part=snippet&q=${search_words}`;
 
@@ -158,11 +157,11 @@ const CoversScreen = ({ navigation }) => {
 
   return (
     <View style={[t.flex1]}>
-      <Header navigation={navigation} title="Amateur Covers"/>
+      <Header navigation={navigation} title="Videos"/>
       <View style={styles.container}>
-        <View style={{color:'white', marginLeft:0}}>
+        <View style={{color:'black', marginLeft:0, borderRadius:width*0.05, borderColor: 'white', borderWidth:0.5, padding:width*0.02, backgroundColor:'gray'}}>
           <Ripple onPress={() => getArtists()}>
-            <Text style={{color:'white'}}>Load Videos</Text>
+            <Text style={{color:'black'}}>Load Videos</Text>
           </Ripple>
         </View>
         {/*<ScrollView>

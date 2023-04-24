@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#222222',
     flex:1,
     position: 'absolute',
-    bottom:height*0.09,
+    bottom:height*0.07,
     height:height*0.76,
     width: width
   },
@@ -72,8 +72,8 @@ const styles = StyleSheet.create({
   },
   button: {
     alignContent: 'center',
-    fontSize: 15,
-    marginLeft: '90%',
+    marginLeft: width*0.8,
+    marginTop: height*0.05,
     color: 'rgba(130, 123, 117, 0.8)',
 
   },
@@ -81,11 +81,13 @@ const styles = StyleSheet.create({
     padding: 10,
     justifyContent: 'space-evenly',
     alignItems: 'center',
-    color: 'rgba(130, 123, 117, 0.8)',
+    color: '222222',
+    height:height,
+    top:0
 
   },
    art: {
-    backgroundColor: 'rgba(130, 123, 117, 0.8)',
+    backgroundColor: '222222',
     shadowColor: 'rgba(106, 90, 205,1)',
     padding: 20,
     borderRadius: 10,
@@ -99,6 +101,8 @@ const styles = StyleSheet.create({
     marginTop: 15,
     marginBottom: 15,
     borderRadius: width * 0.5 * 0.5,
+    alignSelf:'center',
+    marginTop:height*0.04
    },
    segment: {
     flexDirection: 'row',
@@ -177,7 +181,6 @@ const Item = ({ endDate, description, image, extra }) => {
         //LayoutAnimation.configureNext(LayoutAnimation.Presets.spring);
         //setFullView((prev) => !prev);
         setModalVisible(!modalVisible)
-        console.log({description})
       }}
       activeOpacity={0.8}
     >
@@ -190,12 +193,12 @@ const Item = ({ endDate, description, image, extra }) => {
             Alert.alert('Modal has been closed.');
           setModalVisible(!modalVisible);
         }}>
-          <View style={styles.container}>
+          <View>
           <View style={styles.modal}>
             <Pressable
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible(!modalVisible)}>
-              <Text>✖</Text>
+              <Text style={{fontSize:width*0.1}}>✖</Text>
             </Pressable>
             <Text style={styles.textStyle}>{title_select}</Text>
             <Pressable style={styles.textStyle}
@@ -327,7 +330,7 @@ const NewsScreen = ({ navigation }) => {
           </Ripple>
         </View>*/}
 
-        <View style={{color:'white', marginLeft:140}}>
+        <View style={{color:'white', marginLeft:0, borderRadius:width*0.05, bottom:height*0.005, borderColor: 'white', borderWidth:0.5, padding:width*0.02, backgroundColor:'gray'}}>
           <Ripple onPress={() => gatherNews()}>
             <Text style={{color:'white'}}>Gather News</Text>
           </Ripple>

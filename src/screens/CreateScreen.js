@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width:width,
     top:height*0.15,
-    height: height*0.76
+    height: height*0.80
   },
   thumbnail: {
     width: width * 0.75,
